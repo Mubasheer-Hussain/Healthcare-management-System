@@ -1,0 +1,16 @@
+#!/bin/sh
+# Maven Wrapper shell script
+# https://maven.apache.org/wrapper/
+
+set -e
+
+if [ -f ./.mvn/wrapper/maven-wrapper.jar ]; then
+  jarFile="./.mvn/wrapper/maven-wrapper.jar"
+else
+  jarFile=""
+fi
+
+exec java ${MAVEN_OPTS} \
+  -classpath "$jarFile" \
+  "-Dmaven.multiModuleProjectDirectory=$0" \
+  org.apache.maven.wrapper.MavenWrapperMain "$@"

@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — grounded in the MediConnect deck: teal cross mark, near-black
+     display type, light neutral surfaces. Coral/blue lifted from the "bidirectional
+     communication" slide's two speech bubbles and used as patient/doctor accents. */
+  --color-ink: #10151b;
+  --color-ink-soft: #4b5560;
+
+  --color-bg: #f5f6f6;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eef1f1;
+  --color-border: #e2e6e6;
+
+  --color-teal-50: #eefbf8;
+  --color-teal-100: #d1f4ec;
+  --color-teal-300: #6fe0cb;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0b7a70;
+
+  --color-coral-50: #fdf1f0;
+  --color-coral-400: #ef6461;
+  --color-coral-500: #e14b48;
+
+  --color-sky-50: #eff5fc;
+  --color-sky-400: #6fa3d8;
+  --color-sky-500: #3e7cb1;
+
+  --color-amber-400: #f2b84b;
+
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --shadow-card: 0 1px 2px rgba(16, 21, 27, 0.04), 0 8px 24px -12px rgba(16, 21, 27, 0.12);
+  --shadow-pop: 0 12px 32px -8px rgba(13, 148, 136, 0.28);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-teal-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
